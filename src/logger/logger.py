@@ -14,10 +14,12 @@ class Logger:
             os.makedirs(self.path)
         self.file_name = self.prefix + "_" + self.name + ".xlsx"
         self.file_path = os.path.join(self.path,self.file_name)
-        if not os.path.exists(self.file_path):
-            self.create_file()
-        self.wb = xl.load_workbook(self.file_path)
-        self.ws = self.wb.create_sheet(dt.datetime.now().strftime("%H:%M:%S"))
+        self.file_path = os.path.expanduser(self.file_path)
+        if  os.path.exists(self.file_path):
+            self.wb = xl.load_workbook(self.file_path)
+        else:
+            self.wb = xl.Workbook()
+        self.ws = self.wb.create_sheet(dt.datetime.now().strftime("%H-%M-%S"))
         if meta_data is not None:
             self.ws.append(meta_data.keys())
             self.ws.append(meta_data.values())
@@ -29,13 +31,9 @@ class Logger:
     
     def log(self,data:list):
         self.counter += 1
-        self.ws.append([counter,dt.datetime.now().strftime("%H:%M:%S")] + data)    
+        self.ws.append([self.counter,dt.datetime.now().strftime("%H:%M:%S")] + data)    
     
     def save(self):
         self.wb.save(self.file_path)
     
-    def __del__(self):
-        self.save()
-
-
         
