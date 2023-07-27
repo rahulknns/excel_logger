@@ -1,0 +1,97 @@
+\doxysection{logger.\+logger.\+Logger Class Reference}
+\hypertarget{classlogger_1_1logger_1_1_logger}{}\label{classlogger_1_1logger_1_1_logger}\index{logger.logger.Logger@{logger.logger.Logger}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlogger_1_1logger_1_1_logger_a07db766f886d1386e7ff3579b38f8405}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, path=\"{}\texorpdfstring{$\sim$}{\string~}\"{}, prefix=\"{}log\"{}, name=None, overwrite=False, meta\+\_\+data=None, list headers=None)
+\item 
+\mbox{\hyperlink{classlogger_1_1logger_1_1_logger_ae44362221454e76b00dc762083a76e58}{log}} (self, list data)
+\item 
+\mbox{\hyperlink{classlogger_1_1logger_1_1_logger_a4e5fb25a218ce1d812a28c3b6cbbf776}{save}} (self)
+\item 
+\mbox{\hyperlink{classlogger_1_1logger_1_1_logger_add5e185d1dc31ee9dcd750c8af4a9790}{\+\_\+\+\_\+del\+\_\+\+\_\+}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlogger_1_1logger_1_1_logger_afcba6bd94898538ebc33b33ea167dfdb}\label{classlogger_1_1logger_1_1_logger_afcba6bd94898538ebc33b33ea167dfdb} 
+{\bfseries path}
+\item 
+\Hypertarget{classlogger_1_1logger_1_1_logger_ac8986ce355127a44e9d72c4bb39acc0e}\label{classlogger_1_1logger_1_1_logger_ac8986ce355127a44e9d72c4bb39acc0e} 
+{\bfseries prefix}
+\item 
+\Hypertarget{classlogger_1_1logger_1_1_logger_a2e632546dde2648e29b9300d74745d0f}\label{classlogger_1_1logger_1_1_logger_a2e632546dde2648e29b9300d74745d0f} 
+{\bfseries name}
+\item 
+\Hypertarget{classlogger_1_1logger_1_1_logger_a2e4f97accfadce98b2fa93849c056895}\label{classlogger_1_1logger_1_1_logger_a2e4f97accfadce98b2fa93849c056895} 
+{\bfseries counter}
+\item 
+\Hypertarget{classlogger_1_1logger_1_1_logger_ac61ccf5b830e6b45ef0e7c025a607752}\label{classlogger_1_1logger_1_1_logger_ac61ccf5b830e6b45ef0e7c025a607752} 
+{\bfseries file\+\_\+name}
+\item 
+\Hypertarget{classlogger_1_1logger_1_1_logger_a7e5e497a0331b1a01be7f6af195193a0}\label{classlogger_1_1logger_1_1_logger_a7e5e497a0331b1a01be7f6af195193a0} 
+{\bfseries file\+\_\+path}
+\item 
+\Hypertarget{classlogger_1_1logger_1_1_logger_af59cc253dafae59930e0859e90aafe28}\label{classlogger_1_1logger_1_1_logger_af59cc253dafae59930e0859e90aafe28} 
+{\bfseries wb}
+\item 
+\Hypertarget{classlogger_1_1logger_1_1_logger_a46f4b20c0d88f0638b251c74810d2528}\label{classlogger_1_1logger_1_1_logger_a46f4b20c0d88f0638b251c74810d2528} 
+{\bfseries ws}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlogger_1_1logger_1_1_logger_a07db766f886d1386e7ff3579b38f8405}\label{classlogger_1_1logger_1_1_logger_a07db766f886d1386e7ff3579b38f8405} 
+\index{logger.logger.Logger@{logger.logger.Logger}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!logger.logger.Logger@{logger.logger.Logger}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily logger.\+logger.\+Logger.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{path = {\ttfamily \"{}\texorpdfstring{$\sim$}{\string~}\"{}},  }\item[{}]{prefix = {\ttfamily \"{}log\"{}},  }\item[{}]{name = {\ttfamily None},  }\item[{}]{overwrite = {\ttfamily False},  }\item[{}]{meta\+\_\+data = {\ttfamily None},  }\item[{list}]{headers = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}    @brief: This class is used to log data in excel file.
+    @description: Logs the data in excel file. The data is saved in the form of rows. By default the file is saved with date in its name along with prefix. If such a file already exxists creates a new sheet in the same file. If the file does not exist then creates a new file with the given name. The data is saved in the form of rows. The first row is the header row. The first column is the serial number of the data. The second column is the time at which the data is logged. The rest of the columns are the data.
+    @param: path: path where the file is to be saved.
+    @param: prefix: prefix of the file name.
+    @param: name: name of the file.
+    @param: overwrite: if True then the file will be overwritten.
+    @param: meta_data: meta data to be saved in the file.
+    @param: headers: headers of the data to be saved in the file.
+    @return: None
+\end{DoxyVerb}
+ \Hypertarget{classlogger_1_1logger_1_1_logger_add5e185d1dc31ee9dcd750c8af4a9790}\label{classlogger_1_1logger_1_1_logger_add5e185d1dc31ee9dcd750c8af4a9790} 
+\index{logger.logger.Logger@{logger.logger.Logger}!\_\_del\_\_@{\_\_del\_\_}}
+\index{\_\_del\_\_@{\_\_del\_\_}!logger.logger.Logger@{logger.logger.Logger}}
+\doxysubsubsection{\texorpdfstring{\_\_del\_\_()}{\_\_del\_\_()}}
+{\footnotesize\ttfamily logger.\+logger.\+Logger.\+\_\+\+\_\+del\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}    @brief: This function is used to delete the object.
+    @param: None
+    @return: None
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlogger_1_1logger_1_1_logger_ae44362221454e76b00dc762083a76e58}\label{classlogger_1_1logger_1_1_logger_ae44362221454e76b00dc762083a76e58} 
+\index{logger.logger.Logger@{logger.logger.Logger}!log@{log}}
+\index{log@{log}!logger.logger.Logger@{logger.logger.Logger}}
+\doxysubsubsection{\texorpdfstring{log()}{log()}}
+{\footnotesize\ttfamily logger.\+logger.\+Logger.\+log (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{list}]{data }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}    @brief: This function is used to log data in excel file.
+    @param: data: data to be logged.
+    @return: None
+\end{DoxyVerb}
+ \Hypertarget{classlogger_1_1logger_1_1_logger_a4e5fb25a218ce1d812a28c3b6cbbf776}\label{classlogger_1_1logger_1_1_logger_a4e5fb25a218ce1d812a28c3b6cbbf776} 
+\index{logger.logger.Logger@{logger.logger.Logger}!save@{save}}
+\index{save@{save}!logger.logger.Logger@{logger.logger.Logger}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily logger.\+logger.\+Logger.\+save (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}    @brief: This function is used to save the file.
+    @param: None
+    @return: None
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+logger.\+py\end{DoxyCompactItemize}
