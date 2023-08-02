@@ -27,16 +27,25 @@ class Logger:
         self.file_path = os.path.join(self.path,self.file_name)
         self.file_path = os.path.expanduser(self.file_path)
         if  os.path.exists(self.file_path):
-            self.wb = xl.load_workbook(self.file_path)
+            try:
+                if overwrite:
+                    self.wb = xl.Workbook()
+                else:
+                    self.wb = xl.load_workbook(self.file_path)
+            except:
+                self.wb = xl.Workbook()
+                self.file_name = self.prefix + "_" + self.name + "_" + dt.datetime.now().strftime("%H-%M-%S") + ".xlsx"
+                self.file_path = os.path.join(self.path,self.file_name)
+                self.file_path = os.path.expanduser(self.file_path)
         else:
             self.wb = xl.Workbook()
         self.ws = self.wb.create_sheet(dt.datetime.now().strftime("%H-%M-%S"))
         if meta_data is not None:
-            self.ws.append(meta_data.keys())
-            self.ws.append(meta_data.values())
+            self.ws.append(list(meta_data.keys()))
+            self.ws.append( list(meta_data.values()) )
         self.ws.append([])
         if headers is not None:
-            self.ws.append(["SI No" + "Time"] + headers)
+            self.ws.append(["SI No" , "Time"] + headers)
         else:
             self.ws.append(["SI No","Time","Data"])
     
@@ -58,12 +67,10 @@ class Logger:
             @return: None
         """
         self.wb.save(self.file_path)
-    
 
-    def __del__(self):
-        """!
-            @brief: This function is used to delete the object.
-            @param: None
-            @return: None
-        """
+    def __enter__(self):
+        return self 
+    
+    def __exit__(self,exc_type,exc_value,exc_traceback):
         self.save()
+    
