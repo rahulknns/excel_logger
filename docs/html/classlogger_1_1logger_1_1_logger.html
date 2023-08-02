@@ -84,12 +84,16 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a07db766f886d1386e7ff3579b38f8405"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogger_1_1logger_1_1_logger.html#a07db766f886d1386e7ff3579b38f8405">__init__</a> (self, path=&quot;~&quot;, prefix=&quot;log&quot;, name=None, overwrite=False, meta_data=None, list headers=None)</td></tr>
+<tr class="memdesc:a07db766f886d1386e7ff3579b38f8405"><td class="mdescLeft">&#160;</td><td class="mdescRight">: Constructor for the Logger class.  <br /></td></tr>
 <tr class="separator:a07db766f886d1386e7ff3579b38f8405"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae44362221454e76b00dc762083a76e58"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogger_1_1logger_1_1_logger.html#ae44362221454e76b00dc762083a76e58">log</a> (self, list data)</td></tr>
+<tr class="memdesc:ae44362221454e76b00dc762083a76e58"><td class="mdescLeft">&#160;</td><td class="mdescRight">: This function is used to log data in excel file.  <br /></td></tr>
 <tr class="separator:ae44362221454e76b00dc762083a76e58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e5fb25a218ce1d812a28c3b6cbbf776"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogger_1_1logger_1_1_logger.html#a4e5fb25a218ce1d812a28c3b6cbbf776">save</a> (self)</td></tr>
+<tr class="memdesc:a4e5fb25a218ce1d812a28c3b6cbbf776"><td class="mdescLeft">&#160;</td><td class="mdescRight">: This function is used to save the file.  <br /></td></tr>
 <tr class="separator:a4e5fb25a218ce1d812a28c3b6cbbf776"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add5e185d1dc31ee9dcd750c8af4a9790"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogger_1_1logger_1_1_logger.html#add5e185d1dc31ee9dcd750c8af4a9790">__del__</a> (self)</td></tr>
+<tr class="memdesc:add5e185d1dc31ee9dcd750c8af4a9790"><td class="mdescLeft">&#160;</td><td class="mdescRight">: This function is used to delete the object.  <br /></td></tr>
 <tr class="separator:add5e185d1dc31ee9dcd750c8af4a9790"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -175,16 +179,21 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">    @brief: This class is used to log data in excel file.
-    @description: Logs the data in excel file. The data is saved in the form of rows. By default the file is saved with date in its name along with prefix. If such a file already exxists creates a new sheet in the same file. If the file does not exist then creates a new file with the given name. The data is saved in the form of rows. The first row is the header row. The first column is the serial number of the data. The second column is the time at which the data is logged. The rest of the columns are the data.
-    @param: path: path where the file is to be saved.
-    @param: prefix: prefix of the file name.
-    @param: name: name of the file.
-    @param: overwrite: if True then the file will be overwritten.
-    @param: meta_data: meta data to be saved in the file.
-    @param: headers: headers of the data to be saved in the file.
-    @return: None
-</pre> 
+
+<p>: Constructor for the Logger class. </p>
+<p>@description: This function is used to initialize the Logger class. It creates a new excel file if the file does not exist. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>path: path where the file is to be saved. should be a string. </td></tr>
+    <tr><td class="paramname"></td><td>prefix: prefix of the file name. should be a string. </td></tr>
+    <tr><td class="paramname"></td><td>name: name of the file. should be a string. </td></tr>
+    <tr><td class="paramname"></td><td>overwrite: if True then the file will be overwritten. </td></tr>
+    <tr><td class="paramname"></td><td>meta_data: meta data to be saved in the file before the data. </td></tr>
+    <tr><td class="paramname"></td><td>headers: headers of the data to be saved in the file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>: None </dd></dl>
+
 </div>
 </div>
 <a id="add5e185d1dc31ee9dcd750c8af4a9790" name="add5e185d1dc31ee9dcd750c8af4a9790"></a>
@@ -202,10 +211,16 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">    @brief: This function is used to delete the object.
-    @param: None
-    @return: None
-</pre> 
+
+<p>: This function is used to delete the object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>None </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>: None </dd></dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -234,10 +249,16 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">    @brief: This function is used to log data in excel file.
-    @param: data: data to be logged.
-    @return: None
-</pre> 
+
+<p>: This function is used to log data in excel file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>data: data to be logged. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>: None </dd></dl>
+
 </div>
 </div>
 <a id="a4e5fb25a218ce1d812a28c3b6cbbf776" name="a4e5fb25a218ce1d812a28c3b6cbbf776"></a>
@@ -255,14 +276,20 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">    @brief: This function is used to save the file.
-    @param: None
-    @return: None
-</pre> 
+
+<p>: This function is used to save the file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>None </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>: None </dd></dl>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>logger.py</li>
+<li>src/logger/logger.py</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
